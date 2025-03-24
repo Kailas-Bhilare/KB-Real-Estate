@@ -3,7 +3,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f4;
+    background: url('images/hero.jpg') no-repeat center center fixed;
+    background-size: cover;
 }
 
 /* Header */
@@ -33,38 +34,53 @@ header {
     padding: 20px;
 }
 
-/* Property Cards */
+/* Property Cards - Glass Effect */
 .property-card {
-    background: white;
+    background: rgba(255, 255, 255, 0.15); /* Subtle transparency */
+    backdrop-filter: blur(8px); /* Glass effect */
+    -webkit-backdrop-filter: blur(8px); /* Safari support */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+    text-align: center; /* Center text */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center text */
+    align-items: center; /* Horizontally center text */
+    min-height: 150px; /* Ensure enough space for content */
 }
 
 .property-card:hover {
     transform: scale(1.05);
 }
 
-.property-card a {
-    text-decoration: none;
-    color: black;
-    display: block;
+.property-card h2, .property-card p,
+.property-details h2, .property-details p {
+    background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background for readability */
+    color: white;
+    padding: 8px 12px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    text-align: center;
+    margin: 5px auto; /* Center text horizontally */
 }
 
-.property-card h2 {
-    margin: 10px 0;
-}
-
-/* Property Details Page */
+/* Property Details Page - Glass Effect */
 .property-details {
     max-width: 800px;
     margin: 50px auto;
-    background: white;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
 
@@ -77,11 +93,19 @@ header {
 }
 
 .image-slider button {
-    background: none;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
     border: none;
     font-size: 24px;
     cursor: pointer;
     margin: 0 10px;
+    padding: 10px;
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.image-slider button:hover {
+    background: rgba(0, 0, 0, 0.8);
 }
 
 #media-container {
@@ -125,4 +149,3 @@ footer {
 .home-button:hover {
     background-color: #e68900;
 }
-
